@@ -1,9 +1,4 @@
 <?php 
-if ( !function_exists( 'add_action' ) ) {
-	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
-	exit;
-}
-
 require($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');//nhập file wp-load.php để sử dụng hàm update_option()
 
 if(isset($_POST['city'])){
