@@ -4,8 +4,9 @@
     $nhiet_do = get_option('nhiet_do');
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<aside id="<?php echo $args['widget_id']; ?>" >
-    <h2 class="widgettitle"><?php echo get_option('thoi_tiet'); ?></h2>
+<aside class="widget widget_block">
+    <div class="is-layout-flow wp-block-group"><div class="wp-block-group__inner-container">
+    <h2>Thời Tiết</h2>
     <div style="margin-bottom: 25px; background-color: #fcfdfd;border-radius: 9px;padding: 10px;padding-right: 10px;box-shadow: 0px 10px 10px -20px #080c21;">
         <span style="font-weight: bold; font-size: 14px; color: rgba(0,0,0,0.5);">Bây giờ, <?php echo date('H:i:s d/m/Y '); ?></span>
         <div style="margin-top: 10px;">
