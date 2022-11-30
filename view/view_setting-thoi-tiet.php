@@ -13,7 +13,7 @@
                     <th scope="row">Nhiệt độ: </th>
 
                     <td id="search-selected">
-                        <select name="temp">
+                        <select name="temp" id="temp">
                             <?php if(get_option('nhiet_do') == "c"){ ?>
                                 <option value="c" selected>&deg;C</option>
                                 <option value="f">&deg;F</option>
@@ -31,3 +31,18 @@
         </div>
     </form>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+    const URL = window.location.href.split('wp-admin')[0]
+    $(document).ready(function() {
+        $("#btnSave").click(function(e){
+            e.preventDefault()
+            var temp = $('#temp').find(":selected").val()
+            var city = $('#city').val()
+            $.post(URL + 'wp-content/plugins/thoi-tiet/includes/action_form_setting.php', {temp: temp, city: city}, function(result){
+                alert(result)
+            });
+        })
+    });
+</script>
